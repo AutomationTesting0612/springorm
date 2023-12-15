@@ -1,14 +1,11 @@
 package com.spring.orm.springorm.entity;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
-import java.util.HashMap;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 @Data
 @Entity
@@ -27,6 +24,13 @@ public class Company {
     @OneToMany(cascade = CascadeType.ALL)
     @Column(name="emp_id")
     private List<Employee> employee;
+
+    @Column(name="company_address")
+    private String companyAddress;
+
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @Column(name = "add_id")
+//    private Address address;
 
 //    private Set<String, String> companyMap;
 }

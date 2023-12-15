@@ -10,14 +10,16 @@ import java.util.List;
 @Data
 @Entity
 @Transactional
-@Table(name="employee")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "emp_id")
     private Long empId;
+    @Column(name = "name")
     private String name;
+    @Column(name = "age")
     private int age;
+    @Column(name = "email")
     private String email;
 }
